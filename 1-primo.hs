@@ -5,7 +5,7 @@ toInt x = round x
 
 ehPrimo :: Int -> Bool
 ehPrimo k
- | k <= 2 = False
+ | k <= 1 = False
  | otherwise = null [x|x <- [2..toInt(sqrt (fromIntegral k))], k `mod`x == 0]
 
 ehQuadrado :: Int -> Bool
@@ -14,6 +14,8 @@ ehQuadrado n = elem n (takeWhile (<=n) [ x*x | x <- [1..]])
 funcao :: Int -> String
 funcao x
  | ehPrimo x == True = "Primo"
+ | ehQuadrado x == True = "Quadrado Perfeito"
+ | otherwise = "Natural"
 
 main :: IO ()
 main = do 
