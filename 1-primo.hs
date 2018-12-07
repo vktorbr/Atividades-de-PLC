@@ -1,12 +1,12 @@
 --Dado um inteiro, retorne uma string dizendo se ele eh primo, quadrado perfeito, 
 --ou apenas um numero qualquer
 toInt :: Float -> Int
-toInt x = round x
+toInt x = floor x
 
 ehPrimo :: Int -> Bool
 ehPrimo k
  | k <= 1 = False
- | otherwise = null [x|x <- [2..toInt(sqrt (fromIntegral k))], k `mod`x == 0]
+ | otherwise = null [x|x <- [2..floor(sqrt (fromIntegral k))], k `mod`x == 0]
 
 ehQuadrado :: Int -> Bool
 ehQuadrado n = elem n (takeWhile (<=n) [ x*x | x <- [1..]])
