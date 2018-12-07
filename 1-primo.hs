@@ -8,6 +8,9 @@ ehPrimo k
  | k <= 2 = False
  | otherwise = null [x|x <- [2..toInt(sqrt (fromIntegral k))], k `mod`x == 0]
 
+ehQuadrado :: Int -> Bool
+ehQuadrado n = elem n (takeWhile (<=n) [ x*x | x <- [1..]])
+
 funcao :: Int -> String
 funcao x
  | ehPrimo x == True = "Primo"
