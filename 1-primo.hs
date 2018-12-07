@@ -9,7 +9,11 @@ ehPrimo k
  | otherwise = null [x|x <- [2..floor(sqrt (fromIntegral k))], k `mod`x == 0]
 
 ehQuadrado :: Int -> Bool
-ehQuadrado n = elem n (takeWhile (<=n) [ x*x | x <- [1..]])
+ehQuadrado n = sq * sq == n
+        where sq = floor $ sqrt $ (fromIntegral n :: Double)
+
+--ehQuadrado :: Int -> Bool
+--ehQuadrado n = elem n (takeWhile (<=n) [ x*x | x <- [1..]])
 
 funcao :: Int -> String
 funcao x
