@@ -10,7 +10,7 @@ sub (x:xs) = sub1 ++ map (x:) sub1
 funcao :: [[Int]] -> Int -> Int
 --funcao [[]] _ = 0
 funcao (x:xs) s
- | length(x:xs) == 1 = length x
+ | length(x:xs) == 1 = 1
  | sum x == s = 1+(funcao xs s)
  | otherwise = funcao xs s
 
