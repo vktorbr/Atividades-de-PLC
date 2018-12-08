@@ -9,8 +9,11 @@ import Control.Monad (replicateM)
 readMany :: Read a => IO [a]
 readMany = fmap (map read . words) getLine
     
-parse :: IO (Int, Int, [[Int]])
+--parse :: IO (Int, Int, [[Int]])
+parse :: IO ([Int])
 parse = do
+    --m <- readMany
     [m, n] <- readMany
-    xss    <- replicateM m readMany
-    return (m, n, xss)
+    xss <- replicateM m readMany
+    return (xss)
+    --return (m, n, xss)
